@@ -1,5 +1,6 @@
 <script>
 	import "$styles/app.css";
+	import Footer from "$components/Footer.svelte";
 </script>
 <svelte:head>
 	<link
@@ -8,4 +9,5 @@
 </svelte:head>
 <main>
 	<slot/>
+	<Footer name={import.meta.env.VITE_SITE_AUTHOR}/>
 </main>

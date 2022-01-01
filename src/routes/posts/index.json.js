@@ -1,34 +1,33 @@
-import { slugFromPath } from '$lib/util';
+import { slugFromPath } from '$lib/util.js'
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export async function get({ query }) {
-	const modules = import.meta.glob('./*.{md,svx,svelte.md}');
 
-	const postPromises = [];
-	const limit = Number(query.get('limit') ?? Infinity);
+export async function get({ url: { searchParams: query } }) {
+  const limit = Number(query.get('limit') ?? Infinity)
 
-	if (Number.isNaN(limit)) {
-		return {
-			status: 400
-		};
-	}
+  if (Number.isNaN(limit)) {
+    return {
+      status: 400
+    }
+  }
 
-	for (let [path, resolver] of Object.entries(modules)) {
-		const slug = slugFromPath(path);
-		const promise = resolver().then((post) => ({
-			slug,
-			...post.metadata
-		}));
+  const postFiles = Object.entries(import.meta.glob(`./*.{md,svx,svelte.md}`))
 
-		postPromises.push(promise);
-	}
+  const posts = await Promise.all(
+    postFiles.map(async ([path, resolver]) => {
+      const { metadata } = await resolver()
+      return {
+        ...metadata,
+        slug: slugFromPath(path)
+      }
+    })
+  )
 
-	const posts = await Promise.all(postPromises);
-	const publishedPosts = posts.filter((post) => post.published).slice(0, limit);
+  const processedPosts = posts
+    .sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1))
+    .filter((post) => post.published)
 
-	publishedPosts.sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1));
-
-	return {
-		body: publishedPosts.slice(0, limit)
-	};
+  return {
+    body: processedPosts.slice(0, limit)
+  }
 }
