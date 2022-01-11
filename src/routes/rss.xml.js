@@ -1,6 +1,5 @@
 import { slugFromPath } from '$lib/util.js'
 
-// IMPORTANT: update all the property values in this `config` object to reflect your site!
 const config = {
   siteTitle: import.meta.env.VITE_SITE_TITLE,
   siteDescription: import.meta.env.VITE_SITE_DESCRIPTION,
@@ -31,7 +30,6 @@ export const get = async () => {
   }
 }
 
-//Be sure to review and replace any applicable content below!
 const render = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
