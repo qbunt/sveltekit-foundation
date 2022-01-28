@@ -10,5 +10,4 @@
   {description}
 />
 
-<p>Published: {date}</p>
 <slot />

@@ -1,16 +1,13 @@
 import { slugFromPath } from '$lib/util.js'
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-
-export async function get({ url: { searchParams: query } }) {
-  const limit = Number(query.get('limit') ?? Infinity)
-
+export async function get(params) {
+  const limit = params?.searchParams?.get(`limit`) || Infinity
   if (Number.isNaN(limit)) {
     return {
       status: 400
     }
   }
-
   const postFiles = Object.entries(import.meta.glob(`./*.{md,svx,svelte.md}`))
 
   const posts = await Promise.all(
