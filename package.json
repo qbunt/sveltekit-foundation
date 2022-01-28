@@ -1,12 +1,6 @@
 {
   "name": "sveltekit-foundation",
   "version": "0.0.1",
-  "site": {
-    "siteTitle": "SvelteKit Static Blog Starter",
-    "siteDescription": "Add a description here",
-    "mySiteURL": "example.com",
-    "siteLink": "https://github.com/josh-collinsworth/sveltekit-blog-starte"
-  },
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
@@ -34,11 +28,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@urql/devtools": "^2.0.3",
-    "@urql/svelte": "^1.3.3",
-    "graphql": "^16.2.0",
     "rss": "^1.2.2",
-    "svelte-seo": "^1.3.1",
-    "urql": "^2.0.6"
+    "svelte-seo": "^1.3.1"
   }
 }
