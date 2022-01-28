@@ -3,13 +3,10 @@ lockfileVersion: 5.3
 specifiers:
   '@sveltejs/adapter-auto': next
   '@sveltejs/kit': next
-  '@urql/devtools': ^2.0.3
-  '@urql/svelte': ^1.3.3
   autoprefixer: ^10.4.1
   eslint: ^7.32.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^3.2.1
-  graphql: ^16.2.0
   mdsvex: ^0.9.8
   postcss: ^8.4.5
   prettier: ^2.5.1
@@ -18,20 +15,17 @@ specifiers:
   rehype-slug: ^4.0.1
   remark-abbr: ^1.4.1
   remark-github: ^10.1.0
+  rss: ^1.2.2
   svelte: ^3.44.3
   svelte-seo: ^1.3.1
-  urql: ^2.0.6
 
 dependencies:
-  '@urql/devtools': 2.0.3_graphql@16.2.0
-  '@urql/svelte': 1.3.3_graphql@16.2.0+svelte@3.44.3
-  graphql: 16.2.0
+  rss: 1.2.2
   svelte-seo: 1.3.1
-  urql: 2.0.6_graphql@16.2.0
 
 devDependencies:
-  '@sveltejs/adapter-auto': 1.0.0-next.7
-  '@sveltejs/kit': 1.0.0-next.211_svelte@3.44.3
+  '@sveltejs/adapter-auto': 1.0.0-next.17
+  '@sveltejs/kit': 1.0.0-next.247_svelte@3.44.3
   autoprefixer: 10.4.1_postcss@8.4.5
   eslint: 7.32.0
   eslint-config-prettier: 8.3.0_eslint@7.32.0
@@ -85,14 +79,6 @@ packages:
       - supports-color
     dev: true
 
-  /@graphql-typed-document-node/core/3.1.1_graphql@16.2.0:
-    resolution: {integrity: sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==}
-    peerDependencies:
-      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-    dependencies:
-      graphql: 16.2.0
-    dev: false
-
   /@humanwhocodes/config-array/0.5.0:
     resolution: {integrity: sha512-FagtKFz74XrTl7y6HCzQpwDfXP0yhxe9lHLD1UZxjvZIcbyRz8zTFF/yYNfSfzU414eDwZ1SrO0Qvtyf+wFMQg==}
     engines: {node: '>=10.10.0'}
@@ -120,36 +106,36 @@ packages:
       picomatch: 2.3.0
     dev: true
 
-  /@sveltejs/adapter-auto/1.0.0-next.7:
-    resolution: {integrity: sha512-PGuTgW6bdzKgJJy8a12OCN9ob7/I8ixfWjbBVpKpbjHGc5NmNcS70LoTU55BgVTI7ELp9VoZaJsGFoYp+X5WEw==}
+  /@sveltejs/adapter-auto/1.0.0-next.17:
+    resolution: {integrity: sha512-jLMh+5whg9uSJkvAYyVhi4z4GpqWxSR/XhhFCUqDMYN2hMTGCBaB4ReUAHSYIFw3IPV7m318z9igXriOaL6agQ==}
     dependencies:
-      '@sveltejs/adapter-cloudflare': 1.0.0-next.5
-      '@sveltejs/adapter-netlify': 1.0.0-next.37
-      '@sveltejs/adapter-vercel': 1.0.0-next.34
+      '@sveltejs/adapter-cloudflare': 1.0.0-next.9
+      '@sveltejs/adapter-netlify': 1.0.0-next.44
+      '@sveltejs/adapter-vercel': 1.0.0-next.39
     dev: true
 
-  /@sveltejs/adapter-cloudflare/1.0.0-next.5:
-    resolution: {integrity: sha512-I7kLcINJz0zik+ufb+IAWSn/EHxdTdmGF0M3tizd87Cxw2ke7N/A6XF8YrYDgZ/4yrAcZnR8Texas/5WxPYZ6g==}
+  /@sveltejs/adapter-cloudflare/1.0.0-next.9:
+    resolution: {integrity: sha512-xoPbFinqFbzphVf4rjGqU/6CC/QciXtXpBn6+hp4mChjX/9X5c/fxjkVGHPdpq6moTIfaZiMU/EUKtbBvyTBUw==}
     dependencies:
       esbuild: 0.13.15
     dev: true
 
-  /@sveltejs/adapter-netlify/1.0.0-next.37:
-    resolution: {integrity: sha512-Advp53rLMsi9Kg3GYVwWFTmqzIIKCJ2WTrm2zx12Q37RrO+HaY2R+sRMGGGrjD2fk6w1qR7WR9Qt9p0n3moUbw==}
+  /@sveltejs/adapter-netlify/1.0.0-next.44:
+    resolution: {integrity: sha512-GY3w4K4gW+wXo6lGes7gFcPPaUt9kY2xCfhcNfwDvbOf0PsasZD5WatAPtEE9Xz5WTtQLEEgXljVMqsPkpb75Q==}
     dependencies:
       '@iarna/toml': 2.2.5
       esbuild: 0.13.15
       tiny-glob: 0.2.9
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.34:
-    resolution: {integrity: sha512-TQDQK2wjDQkoSkNVuFVu4a/hzqKIWCGL15Zi7zQv740ZSd6F2Lg9QHlFfEXMglu6mhoep084h6JiLtzavNiZeA==}
+  /@sveltejs/adapter-vercel/1.0.0-next.39:
+    resolution: {integrity: sha512-YOPGKIILm26h22GN4/iliXce61aTG3Dq5hX8xpDx0cNuCocv0OoLfIqiGpdyJ9NIMpjwXmpVoL4+nV+yh2wcSA==}
     dependencies:
       esbuild: 0.13.15
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.211_svelte@3.44.3:
-    resolution: {integrity: sha512-jS28R40H6BypK5rSVUzNmQW3NaBTFijj4fJPEtx8YeSLuzqm7ZGl3wwqF+FRxisP6oyz2GkYSARRxzemDOfn9A==}
+  /@sveltejs/kit/1.0.0-next.247_svelte@3.44.3:
+    resolution: {integrity: sha512-8xoSxJ3+Zid4y53dXd9lTLp94heYV1qmCEN6K2sjkFNELy2VaQ0/AWj2z0HWMnUQ2/iojb63OQvdXC46NaV+sQ==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
@@ -193,38 +179,6 @@ packages:
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: true
-
-  /@urql/core/2.3.6_graphql@16.2.0:
-    resolution: {integrity: sha512-PUxhtBh7/8167HJK6WqBv6Z0piuiaZHQGYbhwpNL9aIQmLROPEdaUYkY4wh45wPQXcTpnd11l0q3Pw+TI11pdw==}
-    peerDependencies:
-      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-    dependencies:
-      '@graphql-typed-document-node/core': 3.1.1_graphql@16.2.0
-      graphql: 16.2.0
-      wonka: 4.0.15
-    dev: false
-
-  /@urql/devtools/2.0.3_graphql@16.2.0:
-    resolution: {integrity: sha512-TktPLiBS9LcBPHD6qcnb8wqOVcg3Bx0iCtvQ80uPpfofwwBGJmqnQTjUdEFU6kwaLOFZULQ9+Uo4831G823mQw==}
-    peerDependencies:
-      '@urql/core': '>= 1.14.0'
-      graphql: '>= 0.11.0'
-    dependencies:
-      graphql: 16.2.0
-      wonka: 4.0.15
-    dev: false
-
-  /@urql/svelte/1.3.3_graphql@16.2.0+svelte@3.44.3:
-    resolution: {integrity: sha512-5XbKcEfvMBYrQfuKjCzLgcT46XW4RoVTeOM5VPmAwk7mD709kgL8LXOSF/9A+fTLOByncMxKTp/9lkI8HKCBkA==}
-    peerDependencies:
-      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-      svelte: ^3.0.0
-    dependencies:
-      '@urql/core': 2.3.6_graphql@16.2.0
-      graphql: 16.2.0
-      svelte: 3.44.3
-      wonka: 4.0.15
-    dev: false
 
   /acorn-jsx/5.3.2_acorn@7.4.1:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -843,11 +797,6 @@ packages:
     resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
     dev: true
 
-  /graphql/16.2.0:
-    resolution: {integrity: sha512-MuQd7XXrdOcmfwuLwC2jNvx0n3rxIuNYOxUtiee5XOmfrWo613ar2U8pE7aHAKh8VwfpifubpD9IP+EdEAEOsA==}
-    engines: {node: ^12.22.0 || ^14.16.0 || >=16.0.0}
-    dev: false
-
   /has-flag/3.0.0:
     resolution: {integrity: sha1-tdRU3CGZriJWmfNGfloH87lVuv0=}
     engines: {node: '>=4'}
@@ -1014,6 +963,18 @@ packages:
       svelte: 3.44.3
       vfile-message: 2.0.4
     dev: true
+
+  /mime-db/1.25.0:
+    resolution: {integrity: sha1-wY29fHOl2/b0SgJNwNFloeexw5I=}
+    engines: {node: '>= 0.6'}
+    dev: false
+
+  /mime-types/2.1.13:
+    resolution: {integrity: sha1-4HqqnGxrmnyjASxpADrSWjnpKog=}
+    engines: {node: '>= 0.6'}
+    dependencies:
+      mime-db: 1.25.0
+    dev: false
 
   /minimatch/3.0.4:
     resolution: {integrity: sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==}
@@ -1223,6 +1184,13 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /rss/1.2.2:
+    resolution: {integrity: sha1-UKFpiHYTgTOnT5oF0r3I240nqSE=}
+    dependencies:
+      mime-types: 2.1.13
+      xml: 1.0.1
+    dev: false
+
   /sade/1.8.0:
     resolution: {integrity: sha512-NRfCA8AVYuAA7Hu8bs18od6J4BdcXXwOv6OJuNgwbw8LcLK8JKwaM3WckLZ+MGyPJUS/ivVgK3twltrOIJJnug==}
     engines: {node: '>=6'}
@@ -1399,17 +1367,6 @@ packages:
       punycode: 2.1.1
     dev: true
 
-  /urql/2.0.6_graphql@16.2.0:
-    resolution: {integrity: sha512-ovK9mx7YxD/CKUwVZGbEDBzZjbCcNsr1990nIhDCKe3Ij/0gNcIa+0EIyXKceOPuYDYKavIoaNQV2kOZjQxFcw==}
-    peerDependencies:
-      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-      react: '>= 16.8.0'
-    dependencies:
-      '@urql/core': 2.3.6_graphql@16.2.0
-      graphql: 16.2.0
-      wonka: 4.0.15
-    dev: false
-
   /v8-compile-cache/2.3.0:
     resolution: {integrity: sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==}
     dev: true
@@ -1453,10 +1410,6 @@ packages:
       isexe: 2.0.0
     dev: true
 
-  /wonka/4.0.15:
-    resolution: {integrity: sha512-U0IUQHKXXn6PFo9nqsHphVCE5m3IntqZNB9Jjn7EB1lrR7YTDY3YWgFvEvwniTzXSvOH/XMzAZaIfJF/LvHYXg==}
-    dev: false
-
   /word-wrap/1.2.3:
     resolution: {integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==}
     engines: {node: '>=0.10.0'}
@@ -1465,6 +1418,10 @@ packages:
   /wrappy/1.0.2:
     resolution: {integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=}
     dev: true
+
+  /xml/1.0.1:
+    resolution: {integrity: sha1-eLpyAgApxbyHuKgaPPzXS0ovweU=}
+    dev: false
 
   /yallist/4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
