@@ -43,13 +43,12 @@ export const get = async () => {
   })
 
   const body = feed.xml({ indent: true })
-  const headers = {
-    'Cache-Control': `max-age=0, s-max-age=${600}`,
-    'Content-Type': 'application/xml'
-  }
 
   return {
     body,
-    headers
+    headers: {
+      'Cache-Control': `max-age=0, s-max-age=${600}`,
+      'Content-Type': 'application/xml'
+    }
   }
 }
