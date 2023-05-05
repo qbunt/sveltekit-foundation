@@ -1,21 +1,13 @@
-import adapter from '@sveltejs/adapter-auto';
-import { vitePreprocess } from '@sveltejs/kit/vite';
+import { sveltekit } from '@sveltejs/kit/vite';
+import type { UserConfig } from 'vite';
 
 /** @type {import('@sveltejs/kit').Config} */
-const config = {
-  // Consult https://kit.svelte.dev/docs/integrations#preprocessors
-  // for more information about preprocessors
-  preprocess: vitePreprocess(),
+const config: UserConfig = {
+  plugins: [sveltekit()]
+};
 
-  kit: {
-    adapter: adapter(),
-    alias: {
-      '$styles': 'src/styles',
-      '$components': 'src/components',
-      '$content': 'src/content'
-    }
-  }
-}
+export default config;
+
 
 // import { mdsvex } from 'mdsvex';
 // import mdsvexConfig from './mdsvex.config.js';
@@ -54,5 +46,3 @@ const config = {
 // };
 
 // export default config;
-
-export default config;
