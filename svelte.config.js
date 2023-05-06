@@ -1,12 +1,16 @@
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/kit/vite';
+import { mdsvex } from 'mdsvex';
+import mdsvexConfig from './mdsvex.config.js';
+import autoprefixer from 'autoprefixer';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeSlug from 'rehype-slug'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   // Consult https://kit.svelte.dev/docs/integrations#preprocessors
   // for more information about preprocessors
-  preprocess: vitePreprocess(),
-
+  extensions: ['.svelte', ...mdsvexConfig.extensions],
   kit: {
     adapter: adapter(),
     alias: {
@@ -14,45 +18,19 @@ const config = {
       '$components': 'src/components',
       '$content': 'src/content'
     }
-  }
+  },
+  preprocess: [
+    vitePreprocess(),
+    mdsvex({
+      extensions: ['.md'],
+      // Adds IDs to headings, and anchor links to those IDs. Note: must stay in this order to work.
+      rehypePlugins: [
+        rehypeSlug,
+        rehypeAutolinkHeadings,
+      ],
+    }),
+    autoprefixer
+  ]
 }
-
-// import { mdsvex } from 'mdsvex';
-// import mdsvexConfig from './mdsvex.config.js';
-// import adapter from '@sveltejs/adapter-auto';
-// import path from 'path';
-// import autoprefixer from 'autoprefixer';
-
-// /** @type {import('@sveltejs/kit').Config} */
-// const config = {
-//   extensions: ['.svelte', ...mdsvexConfig.extensions],
-
-//   kit: {
-//     adapter: adapter(),
-
-//     // hydrate the <div id="svelte"> element in src/app.html
-//     // target: '#svelte',
-//     vite: {
-//       resolve: {
-//         alias: {
-//           $actions: path.resolve('./src/actions'),
-//           $components: path.resolve('./src/components'),
-//           $data: path.resolve('./src/data'),
-//           $stores: path.resolve('./src/stores'),
-//           $styles: path.resolve('./src/styles'),
-//           $svg: path.resolve('./src/svg'),
-//           $utils: path.resolve('./src/utils')
-//         }
-//       },
-//       optimizeDeps: {
-//         exclude: ['@urql/svelte']
-//       }
-//     }
-//   },
-
-//   preprocess: [mdsvex(mdsvexConfig), autoprefixer]
-// };
-
-// export default config;
 
 export default config;
