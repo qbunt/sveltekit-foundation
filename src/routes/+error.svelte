@@ -1,23 +1,12 @@
-<h2>
-  <span class="errorCode">404</span>
-  <span class="errorMessage">Page Not Found</span>
-</h2>
+<!-- This page handles any error encountered by the site. -->
+<script>
+import { page } from '$app/stores'
+</script>
 
-<style>
-  h2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-weight: 400;
-    min-height: 400px;
-  }
+<h2>{$page.status}</h2>
+<p class="subhead">{$page.error.message}</p>
 
-  .errorCode {
-    font-size: 8rem;
-  }
-
-  .errorMessage {
-    font-size: 1rem;
-  }
-</style>
+<p><strong>Sorry!</strong> Maybe try one of these links?</p>
+<ul>
+	<li><a href="/">Home</a></li>
+</ul>

@@ -1,3 +1,4 @@
+/** @type {import('./$types').RequestHandler} */
 import RSS from 'rss'
 import { slugFromPath } from '$lib/util.js'
 import { config } from '$lib/siteConfig'
@@ -13,9 +14,9 @@ const feed = new RSS({
   generator: `SvelteKit`
 })
 
-export const get = async () => {
+export async function GET() {
   let allPosts = await Promise.all(
-    Object.entries(import.meta.glob('./posts/*.md')).map(
+    Object.entries(import.meta.glob('$content/posts/*.md')).map(
       async ([path, page]) => {
         const { metadata, default: fullPage } = await page()
         return {
@@ -44,11 +45,12 @@ export const get = async () => {
 
   const body = feed.xml({ indent: true })
 
-  return {
-    body,
-    headers: {
-      'Cache-Control': `max-age=0, s-max-age=${600}`,
-      'Content-Type': 'application/xml'
+  return new Response(
+    body, {
+      headers: {
+        'Cache-Control': `max-age=0, s-max-age=${600}`,
+        'Content-Type': 'application/xml'
+      }
     }
-  }
-}
+  );
+};
