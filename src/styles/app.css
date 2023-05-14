@@ -1,1 +1,35 @@
-@import "normalize.css";
+@import '@fontsource/nunito';
+@import '@fontsource/jetbrains-mono';
+
+:root {
+  --primary-background-color: #222224;
+  --primary-font-color: #F69503;
+  --header-font-color: #EAE0D2;
+  --blur: 10px;
+}
+html {
+  	--font-sans: 'Nunito', sans-serif;
+	  --font-mono: 'JetBrains Mono', monospace;
+    	color: var(--text-1);
+      accent-color: var(--link);
+      background-image: var(--background);
+      background-attachment: fixed;
+}
+body {
+  font-family: var(--font-sans);
+  color: var(--primary-font-color)
+}
+html,
+body {
+	height: 100%;
+  color: var(--primary-font-color)
+}
+
+img {
+	border-radius: var(--radius-3);
+}
+hr {
+  background-color: var(--primary-font-color);
+  border-block-end-width:   var(--border-size-1);
+}
+

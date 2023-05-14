@@ -29,6 +29,10 @@
   },
   "type": "module",
   "dependencies": {
+    "@fontsource/jetbrains-mono": "^4.5.12",
+    "@fontsource/nunito": "^4.5.12",
+    "lucide-svelte": "^0.216.0",
+    "open-props": "^1.5.8",
     "rss": "^1.2.2",
     "svelte-seo": "^1.5.3"
   }
