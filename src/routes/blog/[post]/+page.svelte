@@ -1,19 +1,12 @@
 <script>
   /** @type {import('./$types').PageData} */
-  export let data
+  export const data
 
   const {
     title,
-    excerpt,
     date,
-    updated,
-    coverImage,
-    coverWidth,
-    coverHeight,
-    categories
   } = data.meta
   const { PostContent } = data
-  console.log(data)
 </script>
 
 <svelte:head>
