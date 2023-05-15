@@ -1,8 +1,10 @@
 <script lang="ts">
   import { config } from '$lib/siteConfig.js'
+  import logo from '$lib/assets/logomark.svg'
 </script>
 
 <footer>
+  <img src={logo} alt="" />
   <p>{config.siteTitle} &copy {new Date().getFullYear()}</p>
 </footer>
 

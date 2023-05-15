@@ -1,10 +1,11 @@
 <script lang="ts">
   import { config } from '$lib/siteConfig.js'
+  import logo from '$lib/assets/logomark.svg'
 </script>
 
 <nav>
   <a href="/" class="title">
-    <img src="image/logomark.svg" alt="jeremy bunting's logo" />
+    <img src={logo} alt="jeremy bunting's logo" />
   </a>
 
   <ul class="links">
@@ -19,6 +20,7 @@
 <style>
   nav {
     padding-block: var(--size-7);
+    font-weight: 700;
   }
 
   .links {
