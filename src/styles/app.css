@@ -1,6 +1,6 @@
 @import '@fontsource/nunito';
 @import '@fontsource/jetbrains-mono';
-
+@import './font.css';
 :root {
   --primary-background-color: #222224;
   --primary-font-color: #F69503;
@@ -10,6 +10,10 @@
 html {
   	--font-sans: 'Nunito', sans-serif;
 	  --font-mono: 'JetBrains Mono', monospace;
+    --font-cartridge-bold: 'Cartridge Bold', sans-serif;
+    --font-cartridge-bold-rough: 'Cartridge Bold Rough', sans-serif;
+    --font-cartridge-regular: 'Cartridge Regular', sans-serif;
+    --font-cartridge-rough: 'Cartridge Rough', sans-serif;
     	color: var(--text-1);
       accent-color: var(--link);
       background-image: var(--background);
@@ -31,5 +35,15 @@ img {
 hr {
   background-color: var(--primary-font-color);
   border-block-end-width:   var(--border-size-1);
+}
+li::marker {
+  content: '👉';
+  /* color: # */
+}
+li:last-child::marker {
+  content: '🤷';
+}
+ul {
+  padding-inline-start: var(--size-6);
 }
 
