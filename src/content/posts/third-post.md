@@ -1,10 +1,10 @@
 ---
-title: "A second blog post"
-description: "Dolor amet velit ad ex."
-date: "2021-12-01"
-updated: "2021-11-01"
+title: "A third blog post"
+description: "Commodo reprehenderit duis enim."
+date: "2023-03-01"
+updated: "2023-03-27"
 published: true
-excerpt: Check out how heading links work with this starter in this post.
+excerpt: Sunt aliqua et incididunt deserunt voluptate duis ullamco Lorem commodo anim consectetur sint magna nulla.
 ---
 
 # Qui occaecat laboris
