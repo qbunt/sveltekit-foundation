@@ -4,7 +4,6 @@
 </script>
 
 <footer>
-  <img src={logo} alt="" />
   <p>{config.siteTitle} &copy {new Date().getFullYear()}</p>
 </footer>
 

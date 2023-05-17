@@ -31,11 +31,11 @@
     color: inherit;
     text-decoration: none;
   }
-  li {
-    text-decoration: none;
-  }
   li::marker {
-    display: none;
+    content: '';
+  }
+  li:last-child::marker {
+    content: '';
   }
   @media (min-width: 768px) {
     nav {
