@@ -10,6 +10,6 @@ export const config = {
     { name: "About", link: "/about" },
     { name: "Projects", link: "/projects" },
     { name: "Contact", link: "/contact" },
-    { name: "Uses", link: "/posts/uses" }
+    { name: "Uses", link: "/pages/uses" }
   ]
 }
