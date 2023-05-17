@@ -34,6 +34,7 @@
     "lucide-svelte": "^0.216.0",
     "open-props": "^1.5.8",
     "rss": "^1.2.2",
+    "shiki": "^0.14.2",
     "svelte-seo": "^1.5.3"
   }
 }
